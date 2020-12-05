@@ -1,0 +1,234 @@
+<!-- <div class="container py-5 px-4">
+  
+    <div class="row rounded-lg overflow-hidden d-flex justify-content-center"> -->
+      <!-- Users box-->
+      <!-- Chat Box-->
+      <!-- <div class="col-7  px-0 shadow ">
+        <div class="px-4 py-5 chat-box bg-white" id="app-mensajes"> -->
+          <!-- Sender Message-->
+
+          <!-- margin-left: auto !important; -->
+
+          <!-- <div *ngFor="let chat of chatService.chats" [ngClass]="{'ml-auto': chatService.usuarioLogin.uid == chat.uid}" class=" fadeIn media w-50 mb-3"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+            <div class="media-body ml-3">
+                <mdb-badge pill="true" class="mb-1" primary="true">{{chat.nombre}}</mdb-badge>
+              <div  [ngClass]="{'bg-primary': chatService.usuarioLogin.uid == chat.uid,
+                                  'bg-light': chatService.usuarioLogin.uid != chat.uid}" class="rounded py-2 px-3 mb-2">
+                <p [ngClass]="{'white-text': chatService.usuarioLogin.uid == chat.uid,
+                'text-muted': chatService.usuarioLogin.uid != chat.uid}" class="text-small mb-0 responsive-font-size ">{{chat.mensaje}}</p>
+              </div>
+              <p class="small text-muted">{{chat.fecha}}</p>
+            </div>
+          </div> -->
+  
+          <!-- Reciever Message-->
+          <!-- <div class="media w-50 ml-auto mb-3">
+            <div class="media-body">
+                <mdb-badge pill="true" class="mb-1" success="true">Primary</mdb-badge>
+              <div class="bg-primary rounded py-2 px-3 mb-2">
+                <p class="text-small mb-0 text-white">Test which is a new approach to have all solutions</p>
+              </div>
+              <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+          </div> -->
+  
+          <!-- Sender Message-->
+          <!-- <div class="media w-50 mb-3"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+            <div class="media-body ml-3">
+              <div class="bg-light rounded py-2 px-3 mb-2">
+                <p class="text-small mb-0 text-muted">Test, which is a new approach to have</p>
+              </div>
+              <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+          </div> -->
+  
+          <!-- Reciever Message-->
+          <!-- <div class="media w-50 ml-auto mb-3">
+            <div class="media-body">
+              <div class="bg-primary rounded py-2 px-3 mb-2">
+                <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+              </div>
+              <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+          </div> -->
+  
+          <!-- Sender Message-->
+          <!-- <div class="media w-50 mb-3"><img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+            <div class="media-body ml-3">
+              <div class="bg-light rounded py-2 px-3 mb-2">
+                <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+              </div>
+              <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+          </div> -->
+  
+          <!-- Reciever Message-->
+          <!-- <div class="media w-50 ml-auto mb-3">
+            <div class="media-body">
+              <div class="bg-primary rounded py-2 px-3 mb-2">
+                <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+              </div>
+              <p class="small text-muted">12:00 PM | Aug 13</p>
+            </div>
+          </div> -->
+  
+        <!-- </div> -->
+  
+        <!-- Typing area -->
+        <!-- <form action="#" class="bg-light">
+          <div class="input-group">
+            <input type="text" placeholder="Type a message" [(ngModel)]="mensaje" name="mensaje" (keyup.enter)="enviar_mensaje()" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+            <div class="input-group-append">
+              <button id="button-addon2"  type="submit" class="btn btn-link"><mdb-icon fas icon="paper-plane"></mdb-icon></button>
+            </div>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+  <div class="container-fluid">
+    <div class="row">
+
+    <div class="col-md-12 chat">
+      <div class="chat-header">
+        <div class="profile">
+
+          <div class="left" >
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" class="pp ml-1 mr-4 py-1">
+            <h2 class="h6-responsive">Chat Grupal</h2>
+
+
+
+
+
+          </div>
+
+           <mdb-icon class="button-salir" (click)="chatService.logout()" *ngIf="chatService.usuarioLogin.uid" fas icon="sign-out-alt">Salir</mdb-icon>
+          
+          
+           <a mdbBtn floating="true" mdbWavesEffect class="button-salir" (click)="chatService.logout()" *ngIf="chatService.usuarioLogin.uid">
+            Salir
+           <mdb-icon fas icon="sign-out-alt">Salir</mdb-icon>
+          </a>
+          
+          <!-- [ngClass]="{'sp': chatService.usuarioLogin.uid == chat.uid}" -->
+        </div>
+      </div>
+      <div class="chat-box px-2" id="app-mensajes" >
+
+        <div *ngFor="let chat of chatService.chats" [ngClass]="{'chat-r': chatService.usuarioLogin.uid == chat.uid, 'chat-l': chatService.usuarioLogin.uid != chat.uid}">
+          <div class="" [ngClass]="{'ml-auto': chatService.usuarioLogin.uid == chat.uid, 'spl': chatService.usuarioLogin.uid != chat.uid }"></div>
+          <div class="mess pt-1 px-2" [ngClass]="{'mess-r': chatService.usuarioLogin.uid == chat.uid, 'mess-l': chatService.usuarioLogin.uid != chat.uid }">
+
+
+
+            <span *ngIf="chatService.usuarioLogin.uid != chat.uid">
+                <img  [src]="chatService.usuarioLogin.photoURL"  alt="user" width="22" class="rounded-circle mr-2">
+            </span>
+
+            <!-- <ng-template [ngIf]="chatService.usuarioLogin.uid == chat.uid" >
+              <span >
+                <img  [src]="chatService.usuarioLogin.photoURL"  alt="user" width="25" class="rounded-circle mr-2">
+              </span>
+            </ng-template> -->
+            
+            <!-- <ng-template *ngIf="chatService.usuarioLogin.uid != chat.uid" >
+              <span>
+                <img  [src]="chatService.usuarioLogin.photoURL"  alt="user" width="25" class="rounded-circle mr-2">
+              </span>
+            </ng-template> -->
+
+            <mdb-badge class="mb-2">{{chat.nombre}}</mdb-badge>
+            <p>
+                    {{chat.mensaje}}
+            </p>
+            
+
+            <!-- <i [ngClass]="{'fas fa-trash': chatService.usuarioLogin.uid == chat.uid}" ></i> -->
+
+            <section class="row">
+
+            
+            <div class="check col-md-auto d-flex justify-content-between">
+
+              <div class="dropdown " mdbDropdown >
+                <a mdbDropdownToggle color="primary" class="dropdown-toggle waves-light"
+                mdbWavesEffect>
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item active" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <mdb-icon (click)="eliminarMensaje(chat)" fas icon="trash"></mdb-icon>
+                </div>
+              </div>
+
+              <span class="pt-2">{{chat.fechaOficial}}</span>
+
+            </div>
+            </section>
+          </div>
+        </div>
+        <!-- <div class="chat-l">
+          <div class="mess">
+            <p>
+              hola como estas bladimir
+            
+            </p>
+            <div> 
+              <span>4:00 PM</span>
+              <mdb-icon class="ml-1" fas icon="check"></mdb-icon>
+            </div>
+          </div>
+          <div class="sp"></div>
+        </div> -->
+
+        <!-- <div class="speech-wrapper" >
+
+          <div class="bubble">
+            <div class="txt">
+              <p class="name">Benni</p>
+              <p class="message">Hey, check out this Pure CSS speech bubble...</p>
+              <span class="timestamp">10:20 pm</span>
+            </div>
+            <div class="bubble-arrow"></div>
+          </div> -->
+
+
+          <!--  Speech Bubble alternative -->
+          <!-- <div class="bubble alt">
+            <div class="txt">
+              <p class="name alt">+353 87 1234 567<span> ~ John</span></p>
+              <p class="message">Nice... this will work great for my new project.</p>
+              <span class="timestamp">10:22 pm</span>
+            </div>
+            <div class="bubble-arrow alt"></div>
+          </div>
+
+
+        </div> -->
+
+  
+      </div>
+      <div class="chat-footer">
+        <textarea placeholder="Type a message" [(ngModel)]="mensaje" name="mensaje" >
+
+          <!-- <i (click)="enviar_mensaje()" class="fas fa-paper-plane mx-2"></i> --></textarea>
+
+          
+
+            <mdb-icon color="primary" class="icon-send mr-2" (click)="enviar_mensaje()" size="lg" fas icon="paper-plane"></mdb-icon>
+        
+      </div>
+    </div>
+
+    </div>
+  </div>
